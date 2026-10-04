@@ -10,7 +10,7 @@
       "name": "tokenrun",
       "source": "./",
       "description": "Token Run: a terminal runner game inside Claude Code. The Claude mascot jumps cacti and collects coins before its tokens run out.",
-      "version": "0.5.0"
+      "version": "0.5.1"
     }
   ]
 }

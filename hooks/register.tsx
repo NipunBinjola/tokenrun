@@ -6,16 +6,13 @@ const isOpen = atom({ plugin: 'tokenrun', key: 'isOpen' } as const, false)
 const presses = atom({ plugin: 'tokenrun', key: 'presses' } as const, 0)
 const restarts = atom({ plugin: 'tokenrun', key: 'restarts' } as const, 0)
 
-export const register: Register = (on, options) => {
+// Tokens each coin size refills, and the tokens a run starts with (also the meter's cap).
+const values = { small: 2, medium: 5, large: 10 }
+const startTokens = 100
+
+export const register: Register = on => {
   // Whether the game is asking to continue: only then does R in the prompt belong to it.
   let isAsking = false
-  const num = (v: unknown, fallback: number) => (typeof v === 'number' && v > 0 ? v : fallback)
-  const values = {
-    small: num(options.smallCoinValue, 2),
-    medium: num(options.mediumCoinValue, 5),
-    large: num(options.largeCoinValue, 10),
-  }
-  const startTokens = num(options.startTokens, 100)
 
   on('session.start', async ($, e, next) => {
     await $.command.register({

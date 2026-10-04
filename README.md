@@ -56,17 +56,6 @@ Crash into a cactus and you can **continue**: the first costs 25 tokens, the sec
 and there is no third. A continue never takes you below the tokens you need to survive,
 so it gets cheaper when you are low. You come back with a two-second shield.
 
-## Settings
-
-Under `/config`, Token Run has:
-
-| Setting | Default |
-| --- | --- |
-| Small coin value | 2 |
-| Medium coin value | 5 |
-| Large coin value | 10 |
-| Starting tokens | 100 |
-
 ## Notes
 
 - Sounds play on macOS (through `afplay`); other systems play the game silently.

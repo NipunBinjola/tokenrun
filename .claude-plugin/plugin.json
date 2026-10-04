@@ -1,0 +1,45 @@
+{
+  "name": "tokenrun",
+  "version": "0.5.0",
+  "description": "Token Run: a terminal runner game inside Claude Code. The Claude mascot jumps cacti and collects coins before its tokens run out.",
+  "author": {
+    "name": "NipunBinjola",
+    "url": "https://github.com/NipunBinjola"
+  },
+  "homepage": "https://github.com/NipunBinjola/tokenrun",
+  "repository": "https://github.com/NipunBinjola/tokenrun",
+  "license": "MIT",
+  "keywords": [
+    "game",
+    "mod",
+    "runner",
+    "fun"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "smallCoinValue": {
+      "type": "number",
+      "title": "Small coin value",
+      "description": "Tokens a small coin refills",
+      "default": 2
+    },
+    "mediumCoinValue": {
+      "type": "number",
+      "title": "Medium coin value",
+      "description": "Tokens a medium coin refills",
+      "default": 5
+    },
+    "largeCoinValue": {
+      "type": "number",
+      "title": "Large coin value",
+      "description": "Tokens a large coin refills",
+      "default": 10
+    },
+    "startTokens": {
+      "type": "number",
+      "title": "Starting tokens",
+      "description": "Tokens a run starts with, and the most the meter holds",
+      "default": 100
+    }
+  }
+}

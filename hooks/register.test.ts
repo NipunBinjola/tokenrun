@@ -17,7 +17,7 @@ test('space starts the game and the mascot runs', async $ => {
   await ui.unmount()
 })
 
-test('the mascot hits a cactus it does not jump', async $ => {
+test('the mascot hits a cactus it does not jump, and is offered a continue', async $ => {
   const ui = await $.ui.mount({
     plugin: 'tokenrun',
     surface: 'terminal',
@@ -28,9 +28,9 @@ test('the mascot hits a cactus it does not jump', async $ => {
 
   await ui.key({ key: ' ', in: 'game' })
   await ui.advance(20000)
-  expect(await ui.find({ type: 'Text', text: /G A M E/, in: 'game' })).toBeDefined()
+  expect(await ui.find({ type: 'Text', text: /C O N T I N U E/, in: 'game' })).toBeDefined()
   await ui.key({ key: ' ', in: 'game' })
-  expect(await ui.find({ type: 'Text', text: /G A M E/, in: 'game' })).toBeUndefined()
+  expect(await ui.find({ type: 'Text', text: /C O N T I N U E/, in: 'game' })).toBeUndefined()
   await ui.unmount()
 })
 

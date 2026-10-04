@@ -442,10 +442,10 @@ export default function TokenRun(props: Props, surface: ClientSurface<{ n: numbe
     surface.onKey(({ key, ctrl, meta }) => {
       if (ctrl || meta) return
       if (key === 'r') restart()
-      if (key === ' ' || key === 'space' || key === 'up' || key === 'return') {
-        press()
-        surface.setState({ n: (surface.state?.n ?? 0) + 1 })
-      }
+      else if (key === ' ' || key === 'space' || key === 'up' || key === 'return') press()
+      else return
+      flush()
+      surface.setState({ n: (surface.state?.n ?? 0) + 1 })
     })
     surface.setState({ n: 0 })
   }
